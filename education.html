@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Education | Alwaleed Hassan</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png.png" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .education-card,
+    .education-side-card {
+      background: rgba(255, 250, 242, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.dark-mode .education-card,
+    body.dark-mode .education-side-card {
+      background: rgba(33, 23, 17, 0.9);
+    }
+
+    .education-card::before,
+    .education-side-card::before {
+      content: "";
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .education-card:hover,
+    .education-side-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 24px 55px rgba(75, 46, 31, 0.16);
+    }
+
+    .education-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 14px 28px rgba(139, 105, 20, 0.24);
+    }
+
+    .education-card h2,
+    .education-side-card h2 {
+      color: var(--brown);
+      font-size: 26px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .education-place {
+      color: var(--gold-dark);
+      font-weight: 800;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .education-card p,
+    .education-side-card p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .education-details {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .education-details li {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .education-details i {
+      color: var(--gold-dark);
+      margin-top: 5px;
+    }
+
+    .education-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .education-tags span {
+      padding: 8px 13px;
+      border-radius: 30px;
+      background: rgba(201, 168, 76, 0.14);
+      border: 1px solid var(--border);
+      color: var(--gold-dark);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .education-side {
+      display: grid;
+      gap: 28px;
+    }
+
+    @media (max-width: 1000px) {
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">A. Hassan</a>
+
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="education.html" class="active">Education</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="education-page">
+
+    <section class="education-hero">
+      <p class="eyebrow">
+        <i class="fa-solid fa-graduation-cap"></i>
+        Education
+      </p>
+
+      <h1>Academic Background</h1>
+
+      <p>
+        My education focuses on computer science, artificial intelligence, data analytics,
+        programming, and intelligent system development.
+      </p>
+    </section>
+
+    <section class="education-section">
+
+      <div class="education-grid">
+
+        <div class="education-card">
+          <div class="education-icon">
+            <i class="fa-solid fa-university"></i>
+          </div>
+
+          <p class="education-place">Universiti Teknikal Malaysia Melaka (UTeM)</p>
+
+          <h2>Bachelor's Degree in Computer Science (Artificial Intelligence) with Honours</h2>
+
+          <p>
+            I am currently pursuing my bachelor’s degree in Computer Science with a focus
+            on Artificial Intelligence. My studies help me build a strong foundation in
+            programming, AI concepts, data analytics, algorithms, and intelligent systems.
+          </p>
+
+          <ul class="education-details">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Melaka, Malaysia</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Expected Graduation: 2027</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-star"></i>
+              <span>Dean’s List achievement across multiple semesters.</span>
+            </li>
+          </ul>
+
+          <div class="education-tags">
+            <span>Artificial Intelligence</span>
+            <span>Machine Learning</span>
+            <span>Data Analytics</span>
+            <span>Programming</span>
+            <span>Database Systems</span>
+          </div>
+        </div>
+
+        <div class="education-side">
+
+          <div class="education-side-card">
+            <div class="education-icon">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <h2>Relevant Learning Areas</h2>
+
+            <p>
+              My academic learning supports my interest in AI, machine learning,
+              data analytics, and practical software-based solutions.
+            </p>
+
+            <div class="education-tags">
+              <span>AI Fundamentals</span>
+              <span>Statistics</span>
+              <span>Data Processing</span>
+              <span>Algorithms</span>
+              <span>Problem Solving</span>
+            </div>
+          </div>
+
+          <div class="education-side-card">
+            <div class="education-icon">
+              <i class="fa-solid fa-award"></i>
+            </div>
+
+            <h2>Academic Strength</h2>
+
+            <p>
+              I focus on improving both theoretical understanding and practical application
+              through projects, certificates, and continuous learning.
+            </p>
+
+            <div class="education-tags">
+              <span>Continuous Learning</span>
+              <span>Hands-on Projects</span>
+              <span>Technical Growth</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Alwaleed Hassan. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

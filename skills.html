@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Skills | Alwaleed Hassan</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png.png" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-bottom: 35px;
+    }
+
+    .skill-category {
+      background: rgba(255, 250, 242, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 24px 55px rgba(75, 46, 31, 0.16);
+    }
+
+    .skill-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 14px 28px rgba(139, 105, 20, 0.24);
+    }
+
+    .skill-category h2 {
+      color: var(--brown);
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .skill-category p {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tags span {
+      padding: 8px 13px;
+      border-radius: 30px;
+      background: rgba(201, 168, 76, 0.14);
+      border: 1px solid var(--border);
+      color: var(--gold-dark);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .skills-note {
+      background: rgba(255, 250, 242, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .skills-note h2 {
+      color: var(--brown);
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .skills-note p {
+      color: var(--muted);
+      max-width: 780px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    @media (max-width: 900px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">A. Hassan</a>
+
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="skills-page">
+
+    <section class="skills-hero">
+      <p class="eyebrow">
+        <i class="fa-solid fa-code"></i>
+        Technical Skills
+      </p>
+
+      <h1>My Skills</h1>
+
+      <p>
+        These are the main technical skills I am developing through my university studies,
+        certificates, personal learning, and hands-on projects in AI, data analytics, and programming.
+      </p>
+    </section>
+
+    <section class="skills-section">
+
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+
+          <h2>Programming</h2>
+
+          <p>
+            Programming languages I use for academic work, problem solving,
+            data processing, and project development.
+          </p>
+
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>C++</span>
+            <span>JavaScript</span>
+            <span>SQL</span>
+            <span>R</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+
+          <h2>Artificial Intelligence & Machine Learning</h2>
+
+          <p>
+            Core AI and machine learning skills related to model building,
+            pattern detection, and intelligent decision-making.
+          </p>
+
+          <div class="skill-tags">
+            <span>Machine Learning</span>
+            <span>Anomaly Detection</span>
+            <span>Predictive Maintenance</span>
+            <span>Data Preprocessing</span>
+            <span>Model Evaluation</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+
+          <h2>Data Analytics</h2>
+
+          <p>
+            Skills used to understand datasets, clean data, analyze patterns,
+            and present useful insights.
+          </p>
+
+          <div class="skill-tags">
+            <span>pandas</span>
+            <span>NumPy</span>
+            <span>Matplotlib</span>
+            <span>Power BI</span>
+            <span>Excel</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+
+          <h2>Web Development</h2>
+
+          <p>
+            Web technologies I use to build user interfaces and simple
+            interactive websites or web-based systems.
+          </p>
+
+          <div class="skill-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Node.js</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fa-solid fa-database"></i>
+          </div>
+
+          <h2>Databases</h2>
+
+          <p>
+            Database skills used for storing, managing, and querying structured data
+            in software and analytics projects.
+          </p>
+
+          <div class="skill-tags">
+            <span>MySQL</span>
+            <span>PostgreSQL</span>
+            <span>SQLite</span>
+            <span>Oracle Database</span>
+            <span>Database Design</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+
+          <h2>Tools</h2>
+
+          <p>
+            Tools I use for coding, version control, project work, and development workflow.
+          </p>
+
+          <div class="skill-tags">
+            <span>VS Code</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Jupyter Notebook</span>
+            <span>Streamlit</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="skills-note">
+        <h2>Learning Mindset</h2>
+
+        <p>
+          I focus on building skills through real practice, not only theory.
+          My goal is to improve step by step and apply these skills in practical
+          AI, data analytics, and software projects.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Alwaleed Hassan. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

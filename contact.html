@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact | Alwaleed Hassan</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png.png" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-card,
+    .contact-form-card {
+      background: rgba(255, 250, 242, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.dark-mode .contact-card,
+    body.dark-mode .contact-form-card {
+      background: rgba(33, 23, 17, 0.9);
+    }
+
+    .contact-card::before,
+    .contact-form-card::before {
+      content: "";
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .contact-card:hover,
+    .contact-form-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 24px 55px rgba(75, 46, 31, 0.16);
+    }
+
+    .contact-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 14px 28px rgba(139, 105, 20, 0.24);
+    }
+
+    .contact-card h2,
+    .contact-form-card h2 {
+      color: var(--brown);
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p,
+    .contact-form-card p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 22px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid var(--border);
+    }
+
+    .contact-item i {
+      color: var(--gold-dark);
+      font-size: 20px;
+      margin-top: 3px;
+      width: 24px;
+      text-align: center;
+    }
+
+    .contact-item h3 {
+      color: var(--brown);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 15px;
+      word-break: break-word;
+    }
+
+    .contact-item a:hover {
+      color: var(--gold-dark);
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .social-buttons a {
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--brown);
+      border: 1px solid var(--border);
+      background: var(--button-light);
+    }
+
+    .social-buttons a:hover {
+      transform: translateY(-3px);
+      color: var(--gold-dark);
+      border-color: var(--gold);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 7px;
+    }
+
+    .form-group label {
+      color: var(--brown);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--button-light);
+      color: var(--text);
+      border-radius: 16px;
+      padding: 14px 16px;
+      outline: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .form-group textarea {
+      min-height: 135px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.13);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--muted);
+      opacity: 0.8;
+    }
+
+    .form-note {
+      font-size: 14px !important;
+      color: var(--muted);
+      margin-bottom: 0 !important;
+    }
+
+    @media (max-width: 1000px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">A. Hassan</a>
+
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="contact-page">
+
+    <section class="contact-hero">
+      <p class="eyebrow">
+        <i class="fa-solid fa-paper-plane"></i>
+        Contact
+      </p>
+
+      <h1>Let’s Connect</h1>
+
+      <p>
+        I am open to internship opportunities, academic projects, collaborations,
+        and professional networking related to AI, data analytics, and technology.
+      </p>
+    </section>
+
+    <section class="contact-section">
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fa-solid fa-address-card"></i>
+          </div>
+
+          <h2>Contact Information</h2>
+
+          <p>
+            You can reach me through email, LinkedIn, or GitHub. I am currently based
+            in Melaka, Malaysia.
+          </p>
+
+          <div class="contact-list">
+
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <a href="mailto:your-email@example.com">your-email@example.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fa-brands fa-linkedin"></i>
+              <div>
+                <h3>LinkedIn</h3>
+                <a href="#" target="_blank">Add your LinkedIn link</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fa-brands fa-github"></i>
+              <div>
+                <h3>GitHub</h3>
+                <a href="#" target="_blank">Add your GitHub link</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h3>Location</h3>
+                <span>Melaka, Malaysia</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="social-buttons">
+            <a href="mailto:your-email@example.com">
+              <i class="fa-solid fa-envelope"></i>
+              Email Me
+            </a>
+
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+              LinkedIn
+            </a>
+
+            <a href="#" target="_blank">
+              <i class="fa-brands fa-github"></i>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <div class="contact-icon">
+            <i class="fa-solid fa-message"></i>
+          </div>
+
+          <h2>Send a Message</h2>
+
+          <p>
+            This form is for display only in the current HTML version. For now, the best
+            working contact method is email.
+          </p>
+
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your name" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="your@email.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input id="subject" type="text" placeholder="Internship / Collaboration / Question" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Write your message here..."></textarea>
+            </div>
+
+            <a href="mailto:your-email@example.com" class="btn primary">
+              <i class="fa-solid fa-paper-plane"></i>
+              Send by Email
+            </a>
+
+            <p class="form-note">
+              Later, this form can be connected to Formspree, EmailJS, or a backend service.
+            </p>
+          </form>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Alwaleed Hassan. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

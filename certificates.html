@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Certificates | Alwaleed Hassan</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png.png" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .certificate-card {
+      background: rgba(255, 250, 242, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      min-height: 390px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .certificate-card::before {
+      content: "";
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 24px 55px rgba(75, 46, 31, 0.16);
+    }
+
+    .certificate-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 22px;
+      box-shadow: 0 14px 28px rgba(139, 105, 20, 0.24);
+    }
+
+    .certificate-card h2 {
+      color: var(--brown);
+      font-size: 23px;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .certificate-provider {
+      color: var(--gold-dark);
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .certificate-card p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .certificate-details {
+      list-style: none;
+      margin-bottom: 22px;
+    }
+
+    .certificate-details li {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .certificate-details strong {
+      color: var(--brown);
+    }
+
+    .certificate-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 18px;
+    }
+
+    .certificate-actions a {
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .view-btn {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+      box-shadow: 0 10px 22px rgba(139, 105, 20, 0.22);
+    }
+
+    .view-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 30px rgba(139, 105, 20, 0.3);
+    }
+
+    .download-btn {
+      color: var(--brown);
+      border: 1px solid var(--border);
+      background: var(--button-light);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      color: var(--gold-dark);
+      border-color: var(--gold);
+    }
+
+    .certificates-note {
+      margin-top: 35px;
+      background: rgba(255, 250, 242, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .certificates-note h2 {
+      color: var(--brown);
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .certificates-note p {
+      color: var(--muted);
+      max-width: 780px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    @media (max-width: 1000px) {
+      .certificates-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .certificate-card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">A. Hassan</a>
+
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="certificates.html" class="active">Certificates</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="certificates-page">
+
+    <section class="certificates-hero">
+      <p class="eyebrow">
+        <i class="fa-solid fa-award"></i>
+        Certificates & Achievements
+      </p>
+
+      <h1>My Certificates</h1>
+
+      <p>
+        These certificates show my continuous learning in data analytics, database foundations,
+        statistics, and practical technology-related tasks.
+      </p>
+    </section>
+
+    <section class="certificates-section">
+
+      <div class="certificates-grid">
+
+        <div class="certificate-card">
+          <div class="certificate-icon">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+
+          <p class="certificate-provider">Deloitte / Forage</p>
+
+          <h2>Data Analytics Job Simulation</h2>
+
+          <p>
+            Completed a practical data analytics simulation involving data analysis
+            and forensic technology tasks.
+          </p>
+
+          <ul class="certificate-details">
+            <li><strong>Issued:</strong> April 24, 2026</li>
+            <li><strong>Focus:</strong> Data Analysis</li>
+            <li><strong>Focus:</strong> Forensic Technology</li>
+          </ul>
+
+          <div class="certificate-actions">
+            <a
+              href="assets/certificat/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_69eba4676809d5317b42ff74_1777060596076_completion_certificate.pdf"
+              target="_blank"
+              class="view-btn"
+            >
+              <i class="fa-solid fa-eye"></i>
+              View
+            </a>
+
+            <a
+              href="assets/certificat/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_69eba4676809d5317b42ff74_1777060596076_completion_certificate.pdf"
+              download
+              class="download-btn"
+            >
+              <i class="fa-solid fa-download"></i>
+              Download
+            </a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <div class="certificate-icon">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+
+          <p class="certificate-provider">DataCamp</p>
+
+          <h2>Introduction to Statistics in R</h2>
+
+          <p>
+            Completed an introductory statistics course using R, covering basic
+            statistical concepts and practical learning activities.
+          </p>
+
+          <ul class="certificate-details">
+            <li><strong>Completed:</strong> Nov 30, 2025</li>
+            <li><strong>Length:</strong> 4 Hours</li>
+            <li><strong>Certificate ID:</strong> #44,826,884</li>
+          </ul>
+
+          <div class="certificate-actions">
+            <a
+              href="assets/certificat/ALWALEED_HASSAN_ELYAS_DataCamp_Certificate.pdf"
+              target="_blank"
+              class="view-btn"
+            >
+              <i class="fa-solid fa-eye"></i>
+              View
+            </a>
+
+            <a
+              href="assets/certificat/ALWALEED_HASSAN_ELYAS_DataCamp_Certificate.pdf"
+              download
+              class="download-btn"
+            >
+              <i class="fa-solid fa-download"></i>
+              Download
+            </a>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <div class="certificate-icon">
+            <i class="fa-solid fa-database"></i>
+          </div>
+
+          <p class="certificate-provider">Oracle University</p>
+
+          <h2>Oracle Certified Foundations Associate, Database</h2>
+
+          <p>
+            Earned Oracle Certified Foundations Associate recognition in database,
+            supporting my database knowledge and technical foundation.
+          </p>
+
+          <ul class="certificate-details">
+            <li><strong>Issued:</strong> February 05, 2026</li>
+            <li><strong>Area:</strong> Database Foundations</li>
+            <li><strong>ID:</strong> 325426327ODB12COJA</li>
+          </ul>
+
+          <div class="certificate-actions">
+            <a
+              href="assets/certificat/eCertificate.pdf"
+              target="_blank"
+              class="view-btn"
+            >
+              <i class="fa-solid fa-eye"></i>
+              View
+            </a>
+
+            <a
+              href="assets/certificat/eCertificate.pdf"
+              download
+              class="download-btn"
+            >
+              <i class="fa-solid fa-download"></i>
+              Download
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="certificates-note">
+        <h2>Continuous Learning</h2>
+
+        <p>
+          I use certificates and online learning to strengthen my academic background
+          and improve practical skills that can support my future internship and career goals.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Alwaleed Hassan. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
