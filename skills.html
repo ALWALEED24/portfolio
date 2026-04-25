@@ -16,6 +16,125 @@
   />
 
   <style>
+    .skills-dashboard {
+      margin-bottom: 45px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .skills-graph-card,
+    .skills-summary-card {
+      background: rgba(255, 250, 242, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: 0.3s;
+    }
+
+    body.dark-mode .skills-graph-card,
+    body.dark-mode .skills-summary-card {
+      background: rgba(33, 23, 17, 0.9);
+    }
+
+    .skills-graph-card:hover,
+    .skills-summary-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+    }
+
+    .skills-graph-card h2,
+    .skills-summary-card h2 {
+      color: var(--brown);
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .skills-graph-card p,
+    .skills-summary-card p {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .skill-bar-item {
+      margin-bottom: 20px;
+    }
+
+    .skill-bar-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      color: var(--brown);
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .skill-bar-info span:last-child {
+      color: var(--gold-dark);
+      font-size: 14px;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 12px;
+      background: rgba(201, 168, 76, 0.16);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      box-shadow: 0 0 18px rgba(201, 168, 76, 0.35);
+    }
+
+    .summary-points {
+      display: grid;
+      gap: 15px;
+      margin-top: 18px;
+    }
+
+    .summary-point {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(201, 168, 76, 0.10);
+    }
+
+    .summary-point i {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 12px 24px rgba(139, 105, 20, 0.22);
+    }
+
+    .summary-point h3 {
+      color: var(--brown);
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .summary-point p {
+      margin: 0;
+      font-size: 14.5px;
+      color: var(--muted);
+    }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -30,6 +149,11 @@
       padding: 30px;
       box-shadow: var(--shadow);
       transition: 0.3s;
+    }
+
+    body.dark-mode .skill-category,
+    body.dark-mode .skills-note {
+      background: rgba(33, 23, 17, 0.9);
     }
 
     .skill-category:hover {
@@ -97,9 +221,15 @@
 
     .skills-note p {
       color: var(--muted);
-      max-width: 780px;
+      max-width: 860px;
       margin: auto;
       font-size: 17px;
+    }
+
+    @media (max-width: 1000px) {
+      .skills-dashboard {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 900px) {
@@ -114,7 +244,12 @@
   <div class="custom-cursor" id="customCursor"></div>
 
   <header class="navbar">
-    <a href="index.html" class="logo">A. Hassan</a>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">
+        <i class="fa-solid fa-layer-group"></i>
+      </span>
+      <span>Portfolio</span>
+    </a>
 
     <div class="nav-right">
       <nav class="nav-links" id="navLinks">
@@ -142,18 +277,148 @@
     <section class="skills-hero">
       <p class="eyebrow">
         <i class="fa-solid fa-code"></i>
-        Technical Skills
+        Technical & Creative Skills
       </p>
 
       <h1>My Skills</h1>
 
       <p>
-        These are the main technical skills I am developing through my university studies,
-        certificates, personal learning, and hands-on projects in AI, data analytics, and programming.
+        These are the main technical and creative skills I am developing through my university studies,
+        certificates, personal learning, and hands-on projects in AI, data analytics, programming,
+        design, and robotics basics.
       </p>
     </section>
 
     <section class="skills-section">
+
+      <div class="skills-dashboard">
+
+        <div class="skills-graph-card">
+          <h2>Skill Overview</h2>
+
+          <p>
+            A simple visual overview of my current skill areas. These levels represent my
+            learning confidence and practical exposure, not expert-level mastery.
+          </p>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-info">
+              <span>Programming & Problem Solving</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 75%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-info">
+              <span>AI & Machine Learning</span>
+              <span>70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 70%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-info">
+              <span>Data Analytics & Visualization</span>
+              <span>72%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 72%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-info">
+              <span>Databases</span>
+              <span>68%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 68%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-info">
+              <span>MATLAB</span>
+              <span>40%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 40%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-info">
+              <span>Design & Video Editing</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 88%;"></div>
+            </div>
+          </div>
+
+          <div class="skill-bar-item">
+            <div class="skill-bar-info">
+              <span>Robotics Basics</span>
+              <span>41%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: 41%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-summary-card">
+          <h2>What Makes Me Different</h2>
+
+          <p>
+            I am building a mix of technical, analytical, and creative skills that help me
+            present projects in a more professional and practical way.
+          </p>
+
+          <div class="summary-points">
+
+            <div class="summary-point">
+              <i class="fa-solid fa-calculator"></i>
+              <div>
+                <h3>MATLAB Exposure</h3>
+                <p>
+                  I am able to use MATLAB for academic tasks, machine learning case studies,
+                  analysis, and model-related work.
+                </p>
+              </div>
+            </div>
+
+            <div class="summary-point">
+              <i class="fa-solid fa-pen-nib"></i>
+              <div>
+                <h3>Design & Editing</h3>
+                <p>
+                  I can use Adobe Illustrator and I have an interest in general design,
+                  visual content creation, and video editing.
+                </p>
+              </div>
+            </div>
+
+            <div class="summary-point">
+              <i class="fa-solid fa-robot"></i>
+              <div>
+                <h3>Robotics Basics</h3>
+                <p>
+                  I learned TurtleBot3 programming basics, so I have introductory knowledge
+                  in programming robots and understanding robot movement logic.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
 
       <div class="skills-grid">
 
@@ -175,6 +440,7 @@
             <span>JavaScript</span>
             <span>SQL</span>
             <span>R</span>
+            <span>MATLAB</span>
           </div>
         </div>
 
@@ -187,15 +453,17 @@
 
           <p>
             Core AI and machine learning skills related to model building,
-            pattern detection, and intelligent decision-making.
+            pattern detection, classification, and intelligent decision-making.
           </p>
 
           <div class="skill-tags">
             <span>Machine Learning</span>
+            <span>ANN / MLP</span>
             <span>Anomaly Detection</span>
             <span>Predictive Maintenance</span>
             <span>Data Preprocessing</span>
             <span>Model Evaluation</span>
+            <span>MATLAB ML Tools</span>
           </div>
         </div>
 
@@ -208,7 +476,7 @@
 
           <p>
             Skills used to understand datasets, clean data, analyze patterns,
-            and present useful insights.
+            and present useful insights through reports and dashboards.
           </p>
 
           <div class="skill-tags">
@@ -217,6 +485,8 @@
             <span>Matplotlib</span>
             <span>Power BI</span>
             <span>Excel</span>
+            <span>Tableau</span>
+            <span>Data Visualization</span>
           </div>
         </div>
 
@@ -228,8 +498,8 @@
           <h2>Web Development</h2>
 
           <p>
-            Web technologies I use to build user interfaces and simple
-            interactive websites or web-based systems.
+            Web technologies I use to build user interfaces, portfolio pages,
+            and simple interactive websites or web-based systems.
           </p>
 
           <div class="skill-tags">
@@ -238,6 +508,7 @@
             <span>JavaScript</span>
             <span>React</span>
             <span>Node.js</span>
+            <span>Responsive Design</span>
           </div>
         </div>
 
@@ -259,6 +530,52 @@
             <span>SQLite</span>
             <span>Oracle Database</span>
             <span>Database Design</span>
+            <span>SQL Queries</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+
+          <h2>Design & Creative Editing</h2>
+
+          <p>
+            Creative skills I use to make project videos, advertisements,
+            websites, and visual content more attractive and professional.
+          </p>
+
+          <div class="skill-tags">
+            <span>Adobe Illustrator</span>
+            <span>Graphic Design</span>
+            <span>Video Editing</span>
+            <span>Website Design</span>
+            <span>Visual Content</span>
+            <span>Creative Direction</span>
+            <span>CapCut</span>
+            <span>Canva</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-icon">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+
+          <h2>Robotics Basics</h2>
+
+          <p>
+            Basic robotics exposure through learning TurtleBot3 programming.
+            I understand beginner-level robot programming concepts, but I am still developing this area.
+          </p>
+
+          <div class="skill-tags">
+            <span>TurtleBot3</span>
+            <span>Robot Programming Basics</span>
+            <span>Robot Movement Logic</span>
+            <span>ROS Basics</span>
+            <span>Practical Learning</span>
           </div>
         </div>
 
@@ -270,15 +587,24 @@
           <h2>Tools</h2>
 
           <p>
-            Tools I use for coding, version control, project work, and development workflow.
+            Tools I use for coding, version control, project work, analysis,
+            design, editing, and development workflow.
           </p>
 
           <div class="skill-tags">
             <span>VS Code</span>
+            <span>Notepad++</span>
             <span>Git</span>
             <span>GitHub</span>
             <span>Jupyter Notebook</span>
-            <span>Streamlit</span>
+            <span>MATLAB</span>
+            <span>MIPS</span>
+            <span>Power BI</span>
+            <span>Tableau</span>
+            <span>CLIPS IDE</span>
+            <span>Adobe Illustrator</span>
+            <span>CapCut</span>
+            <span>Canva</span>
           </div>
         </div>
 
@@ -290,7 +616,7 @@
         <p>
           I focus on building skills through real practice, not only theory.
           My goal is to improve step by step and apply these skills in practical
-          AI, data analytics, and software projects.
+          AI, data analytics, software, design, and technology-based projects.
         </p>
       </div>
 

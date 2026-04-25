@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Projects | Alwaleed Hassan</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png.png" />
 
+  <link rel="icon" type="image/png" href="assets/favicon.png.png" />
   <link rel="stylesheet" href="style.css" />
 
   <!-- Font Awesome Icons -->
@@ -30,7 +30,7 @@
       padding: 30px;
       box-shadow: var(--shadow);
       transition: 0.3s;
-      min-height: 340px;
+      min-height: 590px;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -91,6 +91,26 @@
       margin-bottom: 18px;
     }
 
+    .project-list {
+      list-style: none;
+      margin-bottom: 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .project-list li {
+      color: var(--muted);
+      font-size: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .project-list i {
+      color: var(--gold-dark);
+      margin-top: 5px;
+    }
+
     .project-tags {
       display: flex;
       flex-wrap: wrap;
@@ -107,6 +127,42 @@
       color: var(--gold-dark);
       font-size: 14px;
       font-weight: 700;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .project-action-btn {
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+
+    .view-file-btn {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+      box-shadow: 0 12px 25px rgba(139, 105, 20, 0.22);
+    }
+
+    .download-file-btn {
+      color: var(--brown);
+      border: 1px solid var(--border);
+      background: var(--button-light);
+    }
+
+    .project-action-btn:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
     }
 
     .projects-note {
@@ -130,18 +186,28 @@
 
     .projects-note p {
       color: var(--muted);
-      max-width: 780px;
+      max-width: 820px;
       margin: auto;
       font-size: 17px;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1200px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
       .projects-grid {
         grid-template-columns: 1fr;
       }
 
       .project-card {
         min-height: auto;
+      }
+
+      .project-actions {
+        justify-content: center;
       }
     }
   </style>
@@ -151,7 +217,12 @@
   <div class="custom-cursor" id="customCursor"></div>
 
   <header class="navbar">
-    <a href="index.html" class="logo">A. Hassan</a>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">
+        <i class="fa-solid fa-layer-group"></i>
+      </span>
+      <span>Portfolio</span>
+    </a>
 
     <div class="nav-right">
       <nav class="nav-links" id="navLinks">
@@ -185,8 +256,9 @@
       <h1>My Projects</h1>
 
       <p>
-        This page will present my practical work in artificial intelligence,
-        data analytics, software development, and problem-solving systems.
+        A collection of academic and practical projects that show my skills in
+        artificial intelligence, data analysis, system development, database design,
+        and problem solving.
       </p>
     </section>
 
@@ -196,75 +268,173 @@
 
         <div class="project-card">
           <div class="project-icon">
-            <i class="fa-solid fa-brain"></i>
+            <i class="fa-solid fa-film"></i>
           </div>
 
-          <p class="project-type">AI / Machine Learning</p>
+          <p class="project-type">System Development / Database Project</p>
 
-          <h2>Project Details Coming Soon</h2>
+          <h2>Cinema Booking Ticket System</h2>
 
           <p>
-            I will add my confirmed AI-related project here with a clear description,
-            technologies used, main features, and project outcome.
+            A cinema ticket booking system designed to make movie booking easier for users
+            and more manageable for administrators. The system supports movie browsing,
+            seat selection, payment processing, student discounts, meal selection, and
+            administrative reporting.
           </p>
 
+          <ul class="project-list">
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Developed booking flow for movies, dates, time slots, screen type, and seat selection.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Included student discount, loyalty points, meal combos, and payment handling.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Designed admin functions for managing users, movies, meals, bookings, payments, and reports.</span>
+            </li>
+          </ul>
+
           <div class="project-tags">
-            <span>AI</span>
-            <span>Machine Learning</span>
+            <span>C++</span>
+            <span>MySQL</span>
+            <span>Database Design</span>
+            <span>Booking System</span>
+            <span>Reporting</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="assets/project-files/cinema-booking-system.pdf" target="_blank" class="project-action-btn view-file-btn">
+              <i class="fa-solid fa-eye"></i>
+              View File
+            </a>
+
+            <a href="assets/project-files/cinema-booking-system.pdf" download class="project-action-btn download-file-btn">
+              <i class="fa-solid fa-download"></i>
+              Download
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+
+          <p class="project-type">Artificial Intelligence / Machine Learning</p>
+
+          <h2>Heart Disease Prediction Using Clinical Features</h2>
+
+          <p>
+            A machine learning case study that uses a Multi-Layer Perceptron Artificial
+            Neural Network model to classify heart disease using clinical patient features
+            from a UCI dataset.
+          </p>
+
+          <ul class="project-list">
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Used 270 patient records with 13 clinical variables such as age, sex, chest pain type, blood pressure, and cholesterol.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Applied an MLP Artificial Neural Network with backpropagation for classification.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Achieved approximately 88.9% overall accuracy with good generalization across training, validation, and testing.</span>
+            </li>
+          </ul>
+
+          <div class="project-tags">
+            <span>ANN</span>
+            <span>MLP</span>
+            <span>Classification</span>
+            <span>Clinical Data</span>
+            <span>MATLAB</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="assets/project-files/heart-disease-prediction.pdf" target="_blank" class="project-action-btn view-file-btn">
+              <i class="fa-solid fa-eye"></i>
+              View File
+            </a>
+
+            <a href="assets/project-files/heart-disease-prediction.pdf" download class="project-action-btn download-file-btn">
+              <i class="fa-solid fa-download"></i>
+              Download
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon">
+            <i class="fa-solid fa-lock"></i>
+          </div>
+
+          <p class="project-type">AI / Cybersecurity Web Application</p>
+
+          <h2>MindLock</h2>
+
+          <p>
+            An AI-powered personalized password generator and management system that
+            combines cognitive password generation, biometric facial verification,
+            visual memory anchors, and an AI support agent to improve password security
+            and usability.
+          </p>
+
+          <ul class="project-list">
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Generated strong and memorable passwords using rule-based AI and user preference patterns.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Added biometric verification using OpenCV to protect access to the password vault.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Implemented visual memory anchors and an AI support agent for better user guidance and recall.</span>
+            </li>
+          </ul>
+
+          <div class="project-tags">
             <span>Python</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-icon">
-            <i class="fa-solid fa-chart-line"></i>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+            <span>OpenCV</span>
+            <span>AI Support Agent</span>
           </div>
 
-          <p class="project-type">Data Analytics</p>
+          <div class="project-actions">
+            <a href="assets/project-files/mindlock-report.pdf" target="_blank" class="project-action-btn view-file-btn">
+              <i class="fa-solid fa-eye"></i>
+              View File
+            </a>
 
-          <h2>Project Details Coming Soon</h2>
-
-          <p>
-            I will add my confirmed data analytics or dashboard project here with
-            the tools, dataset, analysis process, and final insights.
-          </p>
-
-          <div class="project-tags">
-            <span>Data Analytics</span>
-            <span>Dashboard</span>
-            <span>Visualization</span>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-icon">
-            <i class="fa-solid fa-code"></i>
-          </div>
-
-          <p class="project-type">Software Development</p>
-
-          <h2>Project Details Coming Soon</h2>
-
-          <p>
-            I will add my confirmed software development project here with system
-            features, role, technologies, and practical value.
-          </p>
-
-          <div class="project-tags">
-            <span>Web System</span>
-            <span>Database</span>
-            <span>Development</span>
+            <a href="assets/project-files/mindlock-report.pdf" download class="project-action-btn download-file-btn">
+              <i class="fa-solid fa-download"></i>
+              Download
+            </a>
           </div>
         </div>
 
       </div>
 
       <div class="projects-note">
-        <h2>Projects Will Be Updated</h2>
+        <h2>More Projects Coming Soon</h2>
 
         <p>
-          I will add only real and confirmed projects to keep this portfolio accurate,
-          professional, and useful for internship applications.
+          I will continue updating this page with confirmed projects, GitHub repositories,
+          screenshots, and live demo links as my portfolio grows.
         </p>
       </div>
 

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>About | Alwaleed Hassan</title>
+
   <link rel="icon" type="image/png" href="assets/favicon.png.png" />
   <link rel="stylesheet" href="style.css" />
 
@@ -13,13 +14,128 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
+
+  <style>
+    .about-hero {
+      padding: 95px 8% 90px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.8fr;
+      gap: 70px;
+      align-items: center;
+      min-height: calc(100vh - 85px);
+    }
+
+    .about-left h1 {
+      font-size: 52px;
+      color: var(--brown);
+      margin-bottom: 22px;
+      line-height: 1.1;
+    }
+
+    .about-left p {
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 18px;
+      max-width: 760px;
+    }
+
+    .about-intro {
+      font-weight: 600;
+      color: var(--brown-soft) !important;
+    }
+
+    .about-story-box {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 250, 242, 0.78);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    body.dark-mode .about-story-box {
+      background: rgba(33, 23, 17, 0.9);
+    }
+
+    .about-story-box h2 {
+      color: var(--brown);
+      font-size: 24px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-story-box h2 i {
+      color: var(--gold-dark);
+    }
+
+    .about-story-box p {
+      margin-bottom: 12px;
+    }
+
+    .about-photo-box {
+      background: linear-gradient(135deg, var(--brown-soft), var(--brown));
+      padding: 24px;
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      max-width: 480px;
+      margin-left: auto;
+    }
+
+    .about-photo-box img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      object-position: center 28%;
+      border-radius: 24px;
+      display: block;
+      background: var(--card);
+    }
+
+    @media (max-width: 1000px) {
+      .about-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 45px;
+        padding-top: 70px;
+      }
+
+      .about-left p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .about-left h1 {
+        font-size: 40px;
+      }
+
+      .about-story-box h2 {
+        justify-content: center;
+      }
+
+      .about-photo-box {
+        margin: auto;
+        max-width: 430px;
+      }
+
+      .about-photo-box img {
+        height: 500px;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <div class="custom-cursor" id="customCursor"></div>
 
   <header class="navbar">
-    <a href="index.html" class="logo">A. Hassan</a>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">
+        <i class="fa-solid fa-layer-group"></i>
+      </span>
+      <span>Portfolio</span>
+    </a>
 
     <div class="nav-right">
       <nav class="nav-links" id="navLinks">
@@ -56,20 +172,35 @@
         <p class="about-intro">
           I am a Computer Science student majoring in Artificial Intelligence at
           Universiti Teknikal Malaysia Melaka (UTeM), with a strong interest in
-          machine learning, data analytics, intelligent systems, and real-world
-          problem solving.
+          machine learning, data analytics, intelligent systems, and real-world problem solving.
         </p>
 
         <p>
-          I enjoy building practical AI and software-based solutions that can solve
-          real problems. My current focus is on predictive maintenance, anomaly
-          detection, dashboards, and data-driven decision-making systems.
+          I also have a strong creative interest in design and editing. I have worked on
+          project videos, advertisements, and website designs, and I enjoy turning ideas
+          into attractive visual content. For me, creativity has become more than a skill;
+          it is part of my identity and the way I present my work.
         </p>
 
         <p>
           I am continuously improving my technical skills through academic projects,
-          personal development, certificates, and hands-on coding practice.
+          certificates, personal development, and hands-on coding practice.
         </p>
+
+        <div class="about-story-box">
+          <h2>
+            <i class="fa-solid fa-earth-asia"></i>
+            My Academic Journey
+          </h2>
+
+          <p>
+            I studied in Saudi Arabia for 14 years, which gave me a strong educational
+            foundation before continuing my academic journey in Malaysia. I have been
+            in Malaysia for around 5 years, including 1 year studying English in Kuala
+            Lumpur and 3 years continuing my university studies at Universiti Teknikal
+            Malaysia Melaka (UTeM).
+          </p>
+        </div>
 
         <a href="projects.html" class="btn primary">
           <i class="fa-solid fa-diagram-project"></i>
@@ -79,44 +210,6 @@
 
       <div class="about-photo-box">
         <img src="assets/Images/profile.jpg.jpeg" alt="Alwaleed Hassan Profile Photo">
-      </div>
-    </section>
-
-    <section class="about-highlights">
-      <div class="overview-card">
-        <div class="card-icon">
-          <i class="fa-solid fa-brain"></i>
-        </div>
-
-        <h3>Current Focus</h3>
-
-        <p>
-          Artificial intelligence, machine learning, predictive maintenance,
-          anomaly detection, and data analytics.
-        </p>
-      </div>
-
-      <div class="overview-card">
-        <div class="card-icon">
-          <i class="fa-solid fa-bullseye"></i>
-        </div>
-
-        <h3>Career Goal</h3>
-
-        <p>
-          To secure an internship where I can apply my AI and data skills
-          in real company projects.
-        </p>
-      </div>
-
-      <div class="overview-card">
-        <div class="card-icon">
-          <i class="fa-solid fa-location-dot"></i>
-        </div>
-
-        <h3>Location</h3>
-
-        <p>Melaka, Malaysia</p>
       </div>
     </section>
 

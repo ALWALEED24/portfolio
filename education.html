@@ -16,7 +16,7 @@
   />
 
   <style>
-    .education-grid {
+    .education-main-grid {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 28px;
@@ -24,7 +24,9 @@
     }
 
     .education-card,
-    .education-side-card {
+    .education-side-card,
+    .english-card,
+    .subjects-card {
       background: rgba(255, 250, 242, 0.88);
       border: 1px solid var(--border);
       border-radius: 26px;
@@ -36,12 +38,16 @@
     }
 
     body.dark-mode .education-card,
-    body.dark-mode .education-side-card {
+    body.dark-mode .education-side-card,
+    body.dark-mode .english-card,
+    body.dark-mode .subjects-card {
       background: rgba(33, 23, 17, 0.9);
     }
 
     .education-card::before,
-    .education-side-card::before {
+    .education-side-card::before,
+    .english-card::before,
+    .subjects-card::before {
       content: "";
       width: 100%;
       height: 5px;
@@ -52,10 +58,36 @@
     }
 
     .education-card:hover,
-    .education-side-card:hover {
+    .education-side-card:hover,
+    .english-card:hover,
+    .subjects-card:hover {
       transform: translateY(-8px);
       border-color: var(--gold);
       box-shadow: 0 24px 55px rgba(75, 46, 31, 0.16);
+    }
+
+    .education-logo-box {
+      width: 100%;
+      min-height: 130px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      margin-bottom: 24px;
+    }
+
+    body.dark-mode .education-logo-box {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .education-logo-box img {
+      max-width: 230px;
+      max-height: 95px;
+      object-fit: contain;
+      display: block;
     }
 
     .education-icon {
@@ -73,7 +105,9 @@
     }
 
     .education-card h2,
-    .education-side-card h2 {
+    .education-side-card h2,
+    .english-card h2,
+    .subjects-card h2 {
       color: var(--brown);
       font-size: 26px;
       line-height: 1.25;
@@ -88,7 +122,9 @@
     }
 
     .education-card p,
-    .education-side-card p {
+    .education-side-card p,
+    .english-card p,
+    .subjects-card p {
       color: var(--muted);
       font-size: 16px;
       margin-bottom: 18px;
@@ -135,9 +171,166 @@
       gap: 28px;
     }
 
+    .subjects-section {
+      margin-top: 34px;
+    }
+
+    .subjects-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .subjects-header .education-icon {
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .subject-item {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(201, 168, 76, 0.10);
+      color: var(--brown);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: 0.3s;
+    }
+
+    .subject-item:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.16);
+    }
+
+    .subject-item i {
+      color: var(--gold-dark);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .english-section {
+      margin-top: 34px;
+    }
+
+    .english-card {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .english-logo-area {
+      display: grid;
+      gap: 18px;
+    }
+
+    .english-logo-box {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.45);
+      min-height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+    }
+
+    body.dark-mode .english-logo-box {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .english-logo-box img {
+      max-width: 240px;
+      max-height: 95px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .ielts-highlight {
+      margin-top: 18px;
+      padding: 20px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background: rgba(201, 168, 76, 0.12);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .ielts-score {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 900;
+      flex-shrink: 0;
+      box-shadow: 0 14px 28px rgba(139, 105, 20, 0.24);
+    }
+
+    .ielts-highlight h3 {
+      color: var(--brown);
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .ielts-highlight p {
+      margin: 0;
+      font-size: 15px;
+    }
+
     @media (max-width: 1000px) {
-      .education-grid {
+      .education-main-grid,
+      .english-card {
         grid-template-columns: 1fr;
+      }
+
+      .english-card {
+        text-align: center;
+      }
+
+      .ielts-highlight {
+        justify-content: center;
+        text-align: left;
+      }
+
+      .subjects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .ielts-highlight {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .education-logo-box img,
+      .english-logo-box img {
+        max-width: 190px;
+      }
+
+      .subjects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .subjects-header {
+        align-items: flex-start;
       }
     }
   </style>
@@ -147,7 +340,12 @@
   <div class="custom-cursor" id="customCursor"></div>
 
   <header class="navbar">
-    <a href="index.html" class="logo">A. Hassan</a>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">
+        <i class="fa-solid fa-layer-group"></i>
+      </span>
+      <span>Portfolio</span>
+    </a>
 
     <div class="nav-right">
       <nav class="nav-links" id="navLinks">
@@ -181,18 +379,18 @@
       <h1>Academic Background</h1>
 
       <p>
-        My education focuses on computer science, artificial intelligence, data analytics,
-        programming, and intelligent system development.
+        My education journey includes English language preparation, university studies
+        in Artificial Intelligence, and continuous academic development in Malaysia.
       </p>
     </section>
 
     <section class="education-section">
 
-      <div class="education-grid">
+      <div class="education-main-grid">
 
         <div class="education-card">
-          <div class="education-icon">
-            <i class="fa-solid fa-university"></i>
+          <div class="education-logo-box">
+            <img src="assets/Images/utem-logo.png" alt="UTeM Logo">
           </div>
 
           <p class="education-place">Universiti Teknikal Malaysia Melaka (UTeM)</p>
@@ -202,7 +400,7 @@
           <p>
             I am currently pursuing my bachelor’s degree in Computer Science with a focus
             on Artificial Intelligence. My studies help me build a strong foundation in
-            programming, AI concepts, data analytics, algorithms, and intelligent systems.
+            programming, AI concepts, data analytics, algorithms, databases, and intelligent systems.
           </p>
 
           <ul class="education-details">
@@ -216,12 +414,8 @@
               <span>Expected Graduation: 2027</span>
             </li>
 
-            <li>
-              <i class="fa-solid fa-star"></i>
-              <span>Dean’s List achievement across multiple semesters.</span>
-            </li>
-          </ul>
-
+              <i class="fa-solid fa-award"></i>
+              <span>Academic Excellence Scholarship Recipient</span>
           <div class="education-tags">
             <span>Artificial Intelligence</span>
             <span>Machine Learning</span>
@@ -232,27 +426,6 @@
         </div>
 
         <div class="education-side">
-
-          <div class="education-side-card">
-            <div class="education-icon">
-              <i class="fa-solid fa-book-open"></i>
-            </div>
-
-            <h2>Relevant Learning Areas</h2>
-
-            <p>
-              My academic learning supports my interest in AI, machine learning,
-              data analytics, and practical software-based solutions.
-            </p>
-
-            <div class="education-tags">
-              <span>AI Fundamentals</span>
-              <span>Statistics</span>
-              <span>Data Processing</span>
-              <span>Algorithms</span>
-              <span>Problem Solving</span>
-            </div>
-          </div>
 
           <div class="education-side-card">
             <div class="education-icon">
@@ -275,6 +448,136 @@
 
         </div>
 
+      </div>
+
+      <div class="subjects-section">
+        <div class="subjects-card">
+
+          <div class="subjects-header">
+            <div class="education-icon">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+
+            <div>
+              <h2>Core AI Subjects Taken</h2>
+              <p>
+                These are some of the important AI-related subjects I have taken during my
+                degree studies. They support my interest in machine learning, robotics,
+                natural language processing, image processing, and intelligent systems.
+              </p>
+            </div>
+          </div>
+
+          <div class="subjects-grid">
+            <div class="subject-item">
+              <i class="fa-solid fa-network-wired"></i>
+              <span>Neural Networks</span>
+            </div>
+
+            <div class="subject-item">
+              <i class="fa-solid fa-microchip"></i>
+              <span>Machine Learning</span>
+            </div>
+
+            <div class="subject-item">
+              <i class="fa-solid fa-language"></i>
+              <span>Natural Language Processing</span>
+            </div>
+
+            <div class="subject-item">
+              <i class="fa-solid fa-desktop"></i>
+              <span>Human-Computer Interaction</span>
+            </div>
+
+            <div class="subject-item">
+              <i class="fa-solid fa-robot"></i>
+              <span>Artificial Intelligence in Robotics and Automation</span>
+            </div>
+
+            <div class="subject-item">
+              <i class="fa-solid fa-image"></i>
+              <span>Image Processing and Pattern Recognition</span>
+            </div>
+
+            <div class="subject-item">
+              <i class="fa-solid fa-list-check"></i>
+              <span>Artificial Intelligence Project Management</span>
+            </div>
+
+            <div class="subject-item">
+              <i class="fa-solid fa-user-gear"></i>
+              <span>Intelligent Agent</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="english-section">
+        <div class="english-card">
+
+          <div class="english-logo-area">
+            <div class="english-logo-box">
+              <img src="assets/Images/ems-logo.png" alt="EMS Language Centre Logo">
+            </div>
+
+            <div class="ielts-highlight">
+              <div class="ielts-score">5.0</div>
+
+              <div>
+                <h3>IELTS Exam</h3>
+                <p>
+                  Achieved an IELTS band score of 5.0 as part of my English language
+                  development and academic preparation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="education-place">EMS Language Centre, Kuala Lumpur</p>
+
+            <h2>English Language Study</h2>
+
+            <p>
+              Before continuing my university studies, I studied English at EMS Language
+              Centre in Kuala Lumpur. I completed English levels from Elementary 1 until
+              Intermediate 1, which helped me improve my communication, academic writing,
+              and confidence in using English.
+            </p>
+
+            <p>
+              This English preparation supported my transition into university life in Malaysia
+              and helped me communicate better in academic and technical environments.
+            </p>
+
+            <ul class="education-details">
+              <li>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Kuala Lumpur, Malaysia</span>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-language"></i>
+                <span>Studied from Elementary 1 until Intermediate 1</span>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-certificate"></i>
+                <span>IELTS Band Score: 5.0</span>
+              </li>
+            </ul>
+
+            <div class="education-tags">
+              <span>English Language</span>
+              <span>EMS Language Centre</span>
+              <span>IELTS 5.0</span>
+              <span>Academic Preparation</span>
+              <span>Communication Skills</span>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </section>
