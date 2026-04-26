@@ -133,6 +133,7 @@
     .education-details {
       list-style: none;
       margin-top: 18px;
+      padding-left: 0;
     }
 
     .education-details li {
@@ -257,43 +258,6 @@
       display: block;
     }
 
-    .ielts-highlight {
-      margin-top: 18px;
-      padding: 20px;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      background: rgba(201, 168, 76, 0.12);
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .ielts-score {
-      width: 82px;
-      height: 82px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      font-weight: 900;
-      flex-shrink: 0;
-      box-shadow: 0 14px 28px rgba(139, 105, 20, 0.24);
-    }
-
-    .ielts-highlight h3 {
-      color: var(--brown);
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-
-    .ielts-highlight p {
-      margin: 0;
-      font-size: 15px;
-    }
-
     @media (max-width: 1000px) {
       .education-main-grid,
       .english-card {
@@ -304,22 +268,12 @@
         text-align: center;
       }
 
-      .ielts-highlight {
-        justify-content: center;
-        text-align: left;
-      }
-
       .subjects-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
     @media (max-width: 650px) {
-      .ielts-highlight {
-        flex-direction: column;
-        text-align: center;
-      }
-
       .education-logo-box img,
       .english-logo-box img {
         max-width: 190px;
@@ -335,6 +289,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <div class="custom-cursor" id="customCursor"></div>
@@ -414,8 +369,12 @@
               <span>Expected Graduation: 2027</span>
             </li>
 
+            <li>
               <i class="fa-solid fa-award"></i>
               <span>Academic Excellence Scholarship Recipient</span>
+            </li>
+          </ul>
+
           <div class="education-tags">
             <span>Artificial Intelligence</span>
             <span>Machine Learning</span>
@@ -520,7 +479,7 @@
             <div class="english-logo-box">
               <img src="assets/Images/ems-logo.png" alt="EMS Language Centre Logo">
             </div>
-              
+          </div>
 
           <div>
             <p class="education-place">EMS Language Centre, Kuala Lumpur</p>
@@ -548,11 +507,6 @@
               <li>
                 <i class="fa-solid fa-language"></i>
                 <span>Studied from Elementary 1 until Intermediate 1</span>
-              </li>
-
-              <li>
-                <i class="fa-solid fa-certificate"></i>
-                <span>IELTS Band Score: 5.0</span>
               </li>
             </ul>
 
